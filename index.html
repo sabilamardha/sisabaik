@@ -1,124 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="SisaBaik membantu penyedia menawarkan makanan berlebih agar tetap bernilai, terjangkau, dan tidak terbuang."
-  >
-  <title>Beranda | SisaBaik</title>
-</head>
-<body>
-  <a href="#konten-utama">Lewati ke konten utama</a>
 
-  <header>
-    <p><strong>SisaBaik</strong></p>
-    <nav aria-label="Navigasi utama">
-      <ul>
-        <li><a href="index.html" aria-current="page">Beranda</a></li>
-        <li><a href="#cara-kerja">Cara kerja</a></li>
-        <li><a href="daftar-penyedia.html">Daftar sebagai penyedia</a></li>
-        <li><a href="tawarkan-makanan.html">Tawarkan makanan</a></li>
-      </ul>
-    </nav>
-  </header>
+    <head>
 
-  <main id="konten-utama" tabindex="-1">
-    <section aria-labelledby="judul-utama">
-      <h1 id="judul-utama">Pulihkan nilai makanan berlebih bersama SisaBaik</h1>
-      
-      <!-- GAMBAR DITAMBAHKAN DI SINI -->
-      <img 
-        src="img/makanan.jpg" 
-        alt="Ilustrasi pemulihan makanan berlebih SisaBaik" 
-        width="600" 
-        style="max-width: 100%; height: auto;"
-      >
+        <meta charset="utf-8">
 
-      <p>
-        SisaBaik mempertemukan penyedia yang memiliki stok makanan layak
-        konsumsi dengan pembeli atau penerima yang membutuhkannya.
-      </p>
-      <p>
-        <a href="daftar-penyedia.html">Mulai sebagai penyedia</a>
-        atau
-        <a href="#penawaran-contoh">lihat contoh penawaran</a>.
-      </p>
-    </section>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <section id="cara-kerja" aria-labelledby="judul-cara-kerja">
-      <h2 id="judul-cara-kerja">Cara kerja</h2>
-      <ol>
-        <li>Penyedia mendaftarkan identitas dan informasi usahanya.</li>
-        <li>Penyedia mencatat makanan berlebih yang masih layak konsumsi.</li>
-        <li>Pembeli atau penerima memilih penawaran yang sesuai.</li>
-        <li>Makanan diambil sesuai waktu dan ketentuan yang disepakati.</li>
-      </ol>
-    </section>
+        <meta
+            name="description"
+            content="SisaBaik membantu penyedia menawarkan makanan berlebih agar tetap bernilai, terjangkau, dan tidak terbuang."
+        >
 
-    <section aria-labelledby="judul-manfaat">
-      <h2 id="judul-manfaat">Manfaat SisaBaik</h2>
+        <title>Beranda | SisaBaik</title>
 
-      <article>
-        <h3>Untuk penyedia</h3>
-        <p>
-          Membantu memulihkan sebagian nilai stok, menjangkau pengguna baru,
-          dan mencatat kontribusi pengurangan limbah pangan.
-        </p>
-      </article>
+        <style>
+            /* CSS Sederhana untuk Merapikan Tampilan Ikon Berwarna */
+            .manfaat-title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
 
-      <article>
-        <h3>Untuk pembeli atau penerima</h3>
-        <p>
-          Membuka akses terhadap makanan layak konsumsi dengan harga lebih
-          terjangkau atau melalui penyaluran.
-        </p>
-      </article>
+            .manfaat-icon {
+                width: 32px;
+                height: 32px;
+                flex-shrink: 0;
+            }
 
-      <article>
-        <h3>Untuk lingkungan dan masyarakat</h3>
-        <p>
-          Mengurangi makanan yang terbuang dan mendorong praktik konsumsi
-          yang lebih bertanggung jawab.
-        </p>
-      </article>
-    </section>
+            /* Warna Khusus Ikon */
+            .icon-penyedia {
+                color: #2563eb; /* Biru */
+            }
 
-    <section id="penawaran-contoh" aria-labelledby="judul-penawaran">
-      <h2 id="judul-penawaran">Contoh penawaran hari ini</h2>
-      <p><em>Seluruh data berikut bersifat fiktif untuk keperluan pembelajaran.</em></p>
+            .icon-pembeli {
+                color: #f59e0b; /* Oranye/Emas */
+            }
 
-      <article>
-        <h3>Paket roti campur</h3>
-        <p>Penyedia: Toko Roti Contoh</p>
-        <p>Jumlah tersedia: <data value="8">8 paket</data></p>
-        <p>Harga: <del>Rp25.000</del> <strong>Rp10.000</strong></p>
-        <p>
-          Batas pengambilan:
-          <time datetime="2026-09-02T18:00:00+07:00">
-            2 September 2026, pukul 18.00 WIB
-          </time>
-        </p>
-      </article>
-    </section>
+            .icon-lingkungan {
+                color: #10b981; /* Hijau Daun */
+            }
+        </style>
 
-    <section aria-labelledby="judul-keamanan">
-      <h2 id="judul-keamanan">Komitmen keamanan pangan</h2>
-      <p>
-        SisaBaik hanya ditujukan untuk makanan yang masih layak konsumsi.
-        Penyedia bertanggung jawab memberikan informasi kondisi, alergen,
-        penyimpanan, dan batas waktu pengambilan secara jujur.
-      </p>
-    </section>
-  </main>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-  <footer>
-    <p>&copy; 2026 SisaBaik - Proyek pembelajaran Pengembangan Web.</p>
-    <address>
-      Pertanyaan tentang prototipe:
-      <a href="mailto:tim@sisabaik.example">tim@sisabaik.example</a>
-    </address>
-  </footer>
-</body>
+    <body>
+
+        <a href="#konten-utama">Lewati ke konten utama</a>
+
+        <header>
+
+            <p><strong>SisaBaik</strong></p>
+
+            <nav aria-label="Navigasi utama">
+
+                <ul>
+
+                    <li>
+                        <a href="index.html" aria-current="page">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#cara-kerja">
+                            Cara kerja
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="daftar-penyedia.html">
+                            Daftar sebagai penyedia
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tawarkan-makanan.html">
+                            Tawarkan makanan
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+        <main id="konten-utama" tabindex="-1">
+
+            <section aria-labelledby="judul-utama">
+
+                <h1 id="judul-utama">
+                    Pulihkan nilai makanan berlebih bersama SisaBaik
+                </h1>
+
+                <img
+                    src="makanan.jpg"
+                    alt="Makanan berlebih yang masih layak konsumsi"
+                    style="width: 550px; height: auto; display: block; margin: 20px 0;"
+                >
+
+                <p>
+                    SisaBaik mempertemukan penyedia yang memiliki stok makanan layak
+                    konsumsi dengan pembeli atau penerima yang membutuhkannya.
+                </p>
+
+                <p>
+                    <a href="daftar-penyedia.html">
+                        Mulai sebagai penyedia
+                    </a>
+                    atau
+                    <a href="#penawaran-contoh">
+                        lihat contoh penawaran
+                    </a>.
+                </p>
+
+            </section>
+
+            <section id="cara-kerja" aria-labelledby="judul-cara-kerja">
+
+                <h2 id="judul-cara-kerja">
+                    Cara kerja
+                </h2>
+
+                <ol>
+
+                    <li>
+                        Penyedia mendaftarkan identitas dan informasi usahanya.
+                    </li>
+
+                    <li>
+                        Penyedia mencatat makanan berlebih yang masih layak konsumsi.
+                    </li>
+
+                    <li>
+                        Pembeli atau penerima memilih penawaran yang sesuai.
+                    </li>
+
+                    <li>
+                        Makanan diambil sesuai waktu dan ketentuan yang disepakati.
+                    </li>
+
+                </ol>
+
+            </section>
+
+            <section aria-labelledby="judul-manfaat">
+
+                <h2 id="judul-manfaat">
+                    Manfaat SisaBaik
+                </h2>
+
+                <article>
+
+                    <h3 class="manfaat-title">
+                        <!-- Ikon Toko/Penyedia - Warna Biru -->
+                        <svg class="manfaat-icon icon-penyedia" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 012-2h2a2 2 0 012 2v5m-6 0h6" />
+                        </svg>
+                        Untuk penyedia
+                    </h3>
+
+                    <p>
+                        Membantu memulihkan sebagian nilai stok, menjangkau pengguna baru,
+                        dan mencatat kontribusi pengurangan limbah pangan.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3 class="manfaat-title">
+                        <!-- Ikon Keranjang Belanja - Warna Oranye -->
+                        <svg class="manfaat-icon icon-pembeli" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                        </svg>
+                        Untuk pembeli atau penerima
+                    </h3>
+
+                    <p>
+                        Membuka akses terhadap makanan layak konsumsi dengan harga lebih
+                        terjangkau atau melalui penyaluran.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3 class="manfaat-title">
+                        <!-- Ikon Daun/Lingkungan - Warna Hijau -->
+                        <svg class="manfaat-icon icon-lingkungan" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                        Untuk lingkungan dan masyarakat
+                    </h3>
+
+                    <p>
+                        Mengurangi makanan yang terbuang dan mendorong praktik konsumsi
+                        yang lebih bertanggung jawab.
+                    </p>
+
+                </article>
+
+            </section>
+
+            <section
+                id="penawaran-contoh"
+                aria-labelledby="judul-penawaran"
+            >
+
+                <h2 id="judul-penawaran">
+                    Contoh penawaran hari ini
+                </h2>
+
+                <p>
+                    <em>
+                        Seluruh data berikut bersifat fiktif untuk keperluan pembelajaran.
+                    </em>
+                </p>
+
+                <article>
+
+                    <h3>
+                        Paket roti campur
+                    </h3>
+
+                    <p>
+                        Penyedia: Toko Roti Contoh
+                    </p>
+
+                    <p>
+                        Jumlah tersedia:
+                        <data value="8">
+                            8 paket
+                        </data>
+                    </p>
+
+                    <p>
+                        Harga:
+                        <del>Rp25.000</del>
+                        <strong>Rp10.000</strong>
+                    </p>
+
+                    <p>
+                        Batas pengambilan:
+
+                        <time datetime="2026-09-02T18:00:00+07:00">
+                            2 September 2026, pukul 18.00 WIB
+                        </time>
+
+                    </p>
+
+                </article>
+
+            </section>
+
+            <section aria-labelledby="judul-keamanan">
+
+                <h2 id="judul-keamanan">
+                    Komitmen keamanan pangan
+                </h2>
+
+                <p>
+                    SisaBaik hanya ditujukan untuk makanan yang masih layak konsumsi.
+                    Penyedia bertanggung jawab memberikan informasi kondisi, alergen,
+                    penyimpanan, dan batas waktu pengambilan secara jujur.
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <p>
+                &copy; 2026 SisaBaik - Proyek pembelajaran Pengembangan Web.
+            </p>
+
+            <address>
+
+                Pertanyaan tentang prototipe:
+
+                <a href="mailto:tim@sisabaik.example">
+                    tim@sisabaik.example
+                </a>
+
+            </address>
+
+        </footer>
+
+    </body>
+
 </html>
