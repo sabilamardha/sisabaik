@@ -12,24 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function siapkanKatalog() {
-    const response = document.querySelector("#daftar-penawaran");
+    const wadah = document.querySelector("#daftar-penawaran");
     if (!wadah) return;
 
     const status = document.querySelector("#status-katalog");
-    const inputCari = document.querySelector("#status-katalog");
+    const inputCari = document.querySelector("#cari-penawaran");
     const pilihKategori = document.querySelector("#filter-kategori");
     const keranjang =[];
 
     try {
         const respons = await fetch("data/penawaran.json");
-        if (!respons.ok) throw new Error('HTTP ${respons.status}');
+        if (!respons.ok) throw new Error(`HTTP ${respons.status}`);
         const penawaran = await respons.json();
 
         function perbaruiTampilan() {
             const kata = inputCari.value.trim().toLowerCase();
             const kategori = pilihKategori.value;
             const hasil = penawaran.filter((item) => {
-                const cocokKata = '${item.nama} ${item.penyedia}'.toLowerCase().includes(kata);
+                const cocokKata = `${item.nama} ${item.penyedia}`.toLowerCase().includes(kata);
                 const cocokKategori = kategori === "semua" || item.kategori === kategori;
                 return cocokKata && cocokKategori;
             });
@@ -39,10 +39,10 @@ async function siapkanKatalog() {
             inputCari.addEventListener("input", perbaruiTampilan);
             pilihKategori.addEventListener("change", perbaruiTampilan);
             perbaruiTampilan();
-        } catch (eror) {
+        } catch (error) {
             status.textContent = "Data gagal dimuat. Jalankan proyek melalui server lokal.";
-            status.classList.add("eror-message");
-            console.eror("Gagal memuat penawaran:", eror);
+            status.classList.add("error-message");
+            console.error("Gagal memuat penawaran:", error);
         }
         }
 
@@ -52,16 +52,15 @@ async function siapkanKatalog() {
             data.forEach((item) => {
                 const artikel = document.createElement("article");
                 artikel.className = "offer-card";
-                artikel.innerHTML = '
+                artikel.innerHTML = `
                     <div class="offer-card__visual" aria-hidden="true"></div>
                     <div class="offer-card_content">
-                        <span class="badge">${item.labelKategori}</span>
                         <h3>${item.nama}</h3>
                         <p class="offer-card_meta">${item.penyedia} . ${item.stok} ${item.satuan}</p>
                         <p class="offer-card_price"><del>${rupiah.format(item.hargaNormal)}</del>
                         <strong>${item.hargaPenawaran === 0 ? "Tanpa biaya" : rupiah.format(item.hargaPenawaran)}</strong></p>
                         <button class="button" type="button" data-id="${item.id}">Tambah</button>
-                    </div>';
+                    </div>`;
                 artikel.querySelector("button").addEventListener("click", () => {
                     keranjang.push(item);
                     perbaruiRingkasan(keranjang);
@@ -87,7 +86,7 @@ async function siapkanKatalog() {
                     hargaPenawaran > hargaNormal ? "Harga penawaran tidak boleh melebihi harga normal." : ""
                 );
 
-                normal.addEvent.Listener("input", validasiHarga);
+                normal.addEventListener("input", validasiHarga);
                 penawaran.addEventListener("input", validasiHarga);
                 form.addEventListener("submit", (event) => {
                     validasiHarga();
